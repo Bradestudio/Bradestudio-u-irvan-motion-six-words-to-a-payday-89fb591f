@@ -32,6 +32,8 @@ def gate(story):
     words = story.split()
     if len(words) != 6:
         raise SystemExit("story must be exactly six words, got %d" % len(words))
+    if " ".join(words) != story:
+        raise SystemExit("story must use single spaces between words")
     story.encode("utf-8")  # must be valid UTF-8 text
 
 
